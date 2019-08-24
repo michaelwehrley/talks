@@ -1,0 +1,88 @@
+<h1>Labels</h1>
+
+<p>`continue` with `for` loop</p>
+
+<script type="text/javascript">
+  var i, j;
+
+  loop1:
+  for (i = 0; i < 3; i++) { // The first for statement is labeled "loop1"
+     loop2:
+     for (j = 0; j < 3; j++) {   // The second for statement is labeled "loop2"
+        if (i === 1 && j === 1) {
+           continue loop1;
+        }
+        console.log('i = ' + i + ', j = ' + j);
+     }
+  }
+
+  // Output is:
+  //   "i = 0, j = 0"
+  //   "i = 0, j = 1"
+  //   "i = 0, j = 2"
+  //   "i = 1, j = 0"
+  //   ~"i = 1, j = 1"~ it leaves loop 2...
+  //   ~"i = 1, j = 2"~ b/c it has left loop 2
+  //   "i = 2, j = 0"
+  //   "i = 2, j = 1"
+  //   "i = 2, j = 2"
+  // Notice how it skips both "i = 1, j = 1" and "i = 1, j = 2"  
+</script>
+
+<p>`break` with `for` loop</p>
+
+<script type="text/javascript">
+  var i, j;
+
+  loop1:
+  for (i = 0; i < 3; i++) { // The first for statement is labeled "loop1"
+     loop2:
+     for (j = 0; j < 3; j++) { // The second for statement is labeled "loop2"
+        if (i === 1 && j === 1) {
+           break loop1;
+        }
+        console.log('i = ' + i + ', j = ' + j);
+     }
+  }
+
+  // Output is:
+  //   "i = 0, j = 0"
+  //   "i = 0, j = 1"
+  //   "i = 0, j = 2"
+  //   "i = 1, j = 0"
+  //   ~"i = 1, j = 1"~ it not only leaves it STOPS
+</script>
+
+<p>`break` with non-loop labels</p>
+
+
+<script type="text/javascript">
+  foo: {
+    console.log('face');
+    break foo;
+    console.log('this will not be executed');
+  }
+  console.log('swap');
+</script>
+
+<p>`break`, `labels` and `switch` statements</p>
+
+The value of the expression is compared with the values of each case labels in the structure. If there is a match, the associated block of code is executed
+
+<script type="text/javascript">
+  var foo = Math.floor(Math.random() * 3) + 1 ;
+  switch (foo) {
+    case 1: // case labels
+      console.log(foo);
+      break;
+    case 2:
+      console.log(foo);
+      break;
+    case 3:
+      console.log(foo);
+      break;
+    default:
+      console.log(foo);
+      break;
+  }
+</script>
