@@ -12,3 +12,5 @@ require 'ripper'
 require 'pp'
 
 pp Ripper.sexp(File.read("./hello.rb"))
+pp Ripper.sexp(File.read("./hello_wave.rb"))
+
