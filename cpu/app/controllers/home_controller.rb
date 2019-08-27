@@ -9,3 +9,5 @@ class HomeController < ApplicationController
     end
   end
 end
+
+(1..4).map { |i| i*i }      #=> [1, 4, 9, 16]

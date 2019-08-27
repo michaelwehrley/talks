@@ -9,7 +9,9 @@
       [:params, nil, nil, nil, nil, nil, nil, nil],
       [:bodystmt,
        [[:string_literal,
-         [:string_content, [:@tstring_content, "good bye!", [3, 5]]]]],
+         [:string_content, [
+          :@tstring_content, "good bye!", [3, 5]]]
+        ]],
        nil,
        nil,
        nil]]],
